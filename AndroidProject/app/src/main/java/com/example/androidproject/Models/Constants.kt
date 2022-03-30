@@ -1,17 +1,15 @@
 package com.example.androidproject.Models
 
-import com.example.androidproject.R
 import java.util.ArrayList
 
 object Constants {
 
     public val currentquestion = "Current question"
+    public val score="0"
 
-    fun getAllQuestions(): ArrayList<Question> {
+    fun getQuestionsOne(): ArrayList<Question> {
 
         val questionsList1 = ArrayList<Question>()
-        val questionsList2 = ArrayList<Question>()
-        val questionsList3 = ArrayList<Question>()
 
 
 
@@ -67,6 +65,16 @@ object Constants {
             optionFour="Wrong Answer",
         )
         questionsList1.add(que5)
+
+
+        return questionsList1
+    }
+
+
+    fun getQuestionsTwo(): ArrayList<Question> {
+
+        val questionsList2 = ArrayList<Question>()
+
 //Category Two
         val que6=Question(
             id= 6,
@@ -119,6 +127,14 @@ object Constants {
             optionFour="Wrong Answer",
         )
         questionsList2.add(que10)
+
+        return questionsList2
+    }
+
+
+    fun getQuestionsThree(): ArrayList<Question> {
+
+        val questionsList3 = ArrayList<Question>()
 
         //Category Three
         val que11=Question(
@@ -173,6 +189,6 @@ object Constants {
         )
         questionsList3.add(que15)
 
-        return questionsList1
+        return questionsList3
     }
 }

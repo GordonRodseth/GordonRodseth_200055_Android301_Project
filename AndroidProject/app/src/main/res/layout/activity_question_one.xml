@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/dark_grey"
+
+    >
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="277dp"
+            android:background="@color/black">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="50dp"
+
+                android:src="@drawable/icon4"></ImageView>
+
+        </TableRow>
+
+        <TableRow android:background="@color/black">
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/zendots"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:text="The Question Goes Here"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="8pt">
+
+            </TextView>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/optionOne"
+                android:layout_width="175dp"
+                android:layout_height="120dp"
+                android:layout_margin="15dp"
+                app:cardBackgroundColor="@color/black"
+                android:outlineSpotShadowColor="@color/white"
+                app:cardElevation="7dp">
+
+                <TextView
+                    android:id="@+id/optionOneText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/zendots"
+                    android:padding="15dp"
+                    android:singleLine="false"
+                    android:text="Answer One"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="5pt">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/optionTwo"
+                android:layout_width="175dp"
+                android:layout_height="120dp"
+                android:layout_margin="15dp"
+                app:cardBackgroundColor="@color/black"
+                android:outlineSpotShadowColor="@color/white"
+                app:cardElevation="7dp">
+
+                <TextView
+                    android:id="@+id/optionTwoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/zendots"
+                    android:padding="15dp"
+                    android:singleLine="false"
+                    android:text="Answer Two"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="5pt">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="202dp"
+            android:layout_marginTop="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/optionThree"
+                android:layout_width="175dp"
+                android:layout_height="120dp"
+                android:layout_margin="15dp"
+                android:outlineSpotShadowColor="@color/white"
+                app:cardBackgroundColor="@color/black"
+                app:cardElevation="7dp">
+
+                <TextView
+                    android:id="@+id/optionThreeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/zendots"
+                    android:padding="15dp"
+                    android:singleLine="false"
+                    android:text="Answer 3"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="5pt">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/optionFour"
+                android:layout_width="175dp"
+                android:layout_height="120dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="5dp"
+                android:outlineSpotShadowColor="@color/white"
+                app:cardBackgroundColor="@color/black"
+                app:cardElevation="7dp">
+
+                <TextView
+                    android:id="@+id/optionFourText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:baselineAligned="false"
+                    android:fontFamily="@font/zendots"
+                    android:padding="15dp"
+                    android:singleLine="false"
+                    android:text="Answer 4"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="5pt">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+
+
+    </TableLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="417dp"
+        android:layout_height="68dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.978">
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="414dp"
+        android:layout_height="64dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon1"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="417dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon2"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="417dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon3"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="417dp" />
+
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="95dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon4"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:layout_width="51dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon5"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

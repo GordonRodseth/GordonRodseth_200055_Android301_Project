@@ -12,11 +12,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding= ActivityMainBinding.inflate(layoutInflater)
         val view=binding.root
         setContentView(view)
 
         binding.playButton.setOnClickListener{
-            val intent = Intent(this, QuestionActivity::class.java)
+            val intent = Intent(this, CategoryActivity::class.java)
             intent.putExtra(Constants.currentquestion, 1)
             startActivity(intent)
             finish()
