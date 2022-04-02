@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/dark_grey"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/TitleBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:background="@color/black">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/icon2"></ImageView>
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/zendots"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:text="High Scores"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="8pt">
+
+            </TextView>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Scorebox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleBox"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/scorebox1title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/zendots"
+            android:padding="15dp"
+            android:singleLine="false"
+            android:text="Ancient Aliens:"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="8pt"></TextView>
+
+        <RelativeLayout
+            android:layout_width="327dp"
+            android:layout_height="75dp"
+            android:layout_below="@+id/scorebox1title"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/black"
+            android:outlineSpotShadowColor="@color/white"
+            android:elevation="3dp"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/score1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/zendots"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:text="Score1"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="7pt"></TextView>
+
+            <TextView
+                android:id="@+id/user1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/zendots"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:text="User1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="6pt"></TextView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/Scorebox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Scorebox1"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/scorebox2title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/zendots"
+            android:padding="15dp"
+            android:paddingBottom="0dp"
+            android:singleLine="false"
+            android:text="Strange Sightings:"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="8pt"></TextView>
+
+        <RelativeLayout
+            android:layout_width="327dp"
+            android:layout_height="75dp"
+            android:layout_below="@+id/scorebox2title"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/black"
+            android:outlineSpotShadowColor="@color/white"
+            android:elevation="3dp"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/score2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/zendots"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:text="Score1"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="7pt"></TextView>
+
+            <TextView
+                android:id="@+id/user2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/zendots"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:text="User1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="6pt"></TextView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Scorebox3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Scorebox2"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/scorebox3title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/zendots"
+            android:padding="15dp"
+            android:singleLine="false"
+            android:text="Amazing Abductions:"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="8pt"></TextView>
+
+        <RelativeLayout
+            android:layout_width="327dp"
+            android:layout_height="75dp"
+            android:layout_below="@+id/scorebox3title"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/black"
+            android:outlineSpotShadowColor="@color/white"
+            android:elevation="3dp"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/score3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/zendots"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:text="Score1"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="7pt"></TextView>
+
+            <TextView
+                android:id="@+id/user3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/zendots"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:text="User1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="6pt"></TextView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="417dp"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp">
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/navprof"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon1" />
+
+        <ImageView
+            android:id="@+id/navboard"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_toStartOf="@+id/navhome"
+            android:layout_toEndOf="@+id/navprof"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/icon2"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="417dp" />
+
+        <ImageView
+            android:id="@+id/navhome"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/icon3" />
+
+        <ImageView
+            android:id="@+id/navcategories"
+            android:layout_width="51dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="end"
+            android:layout_toStartOf="@+id/navsettings"
+            android:layout_toEndOf="@+id/navhome"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/icon4" />
+
+        <ImageView
+            android:id="@+id/navsettings"
+            android:layout_width="51dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/icon5" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

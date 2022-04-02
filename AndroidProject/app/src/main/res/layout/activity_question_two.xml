@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".QuestionActivityTwo"
     android:background="@color/dark_grey"
 
     >
 
-    <TableLayout
-        android:id="@+id/tableLayout"
+    <RelativeLayout
+        android:id="@+id/QuestionBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="277dp"
             android:background="@color/black">
@@ -24,35 +24,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginTop="50dp"
-
+                android:layout_alignParentTop="true"
                 android:src="@drawable/icon4"></ImageView>
-
-        </TableRow>
-
-        <TableRow android:background="@color/black">
 
             <TextView
                 android:id="@+id/question"
-                android:layout_width="425dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/zendots"
                 android:padding="15dp"
                 android:singleLine="false"
+                android:layout_alignParentBottom="true"
                 android:text="The Question Goes Here"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="8pt">
 
             </TextView>
-        </TableRow>
-    </TableLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+        android:layout_below="@+id/QuestionBox"
+        android:layout_marginTop="0dp">
 
-        <TableRow android:layout_width="match_parent"
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp">
 
@@ -61,8 +63,8 @@
                 android:layout_width="175dp"
                 android:layout_height="120dp"
                 android:layout_margin="15dp"
-                app:cardBackgroundColor="@color/black"
                 android:outlineSpotShadowColor="@color/white"
+                app:cardBackgroundColor="@color/black"
                 app:cardElevation="7dp">
 
                 <TextView
@@ -90,8 +92,8 @@
                 android:layout_width="175dp"
                 android:layout_height="120dp"
                 android:layout_margin="15dp"
-                app:cardBackgroundColor="@color/black"
                 android:outlineSpotShadowColor="@color/white"
+                app:cardBackgroundColor="@color/black"
                 app:cardElevation="7dp">
 
                 <TextView
@@ -180,89 +182,79 @@
 
 
     </TableLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="417dp"
-        android:layout_height="68dp"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="0dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978">
+        app:cardElevation="0dp">
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="414dp"
+    <RelativeLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
         android:layout_height="64dp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black">
 
         <ImageView
+            android:id="@+id/navprof"
             android:layout_width="50dp"
             android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/icon1"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="417dp" />
+            android:src="@drawable/icon1" />
 
         <ImageView
+            android:id="@+id/navboard"
             android:layout_width="50dp"
             android:layout_height="fill_parent"
-            android:layout_marginLeft="95dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@+id/navhome"
+            android:layout_toEndOf="@+id/navprof"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:src="@drawable/icon2"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="130dp"
             tools:layout_editor_absoluteY="417dp" />
 
         <ImageView
+            android:id="@+id/navhome"
             android:layout_width="50dp"
             android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/icon3"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="417dp" />
+            android:src="@drawable/icon3" />
 
         <ImageView
-            android:layout_width="46dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="end"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="95dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/icon4"
-            tools:ignore="MissingConstraints" />
-
-        <ImageView
+            android:id="@+id/navcategories"
             android:layout_width="51dp"
             android:layout_height="fill_parent"
             android:layout_gravity="end"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/icon5"
-            tools:ignore="MissingConstraints" />
+            android:layout_toStartOf="@+id/navsettings"
+            android:layout_toEndOf="@+id/navhome"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/icon4" />
 
-    </androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/navsettings"
+            android:layout_width="51dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/icon5" />
+
+    </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

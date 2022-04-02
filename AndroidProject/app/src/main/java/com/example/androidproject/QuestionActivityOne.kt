@@ -1,5 +1,6 @@
 package com.example.androidproject
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent;
@@ -17,9 +18,41 @@ class QuestionActivityOne : AppCompatActivity() {
         val view=binding.root
         setContentView(view)
 
+        //navigation bar
+        binding.navhome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.navboard.setOnClickListener {
+            val intent = Intent(this, LeaderboardActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.navcategories.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.navprof.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.navsettings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        //navigation bar
+
+        val sharedPref=getSharedPreferences("myPref", Context.MODE_PRIVATE)
+        val editor=sharedPref.edit()
 
         var currentQuestion = intent?.extras?.getInt(Constants.currentquestion, 1)
-        var score = intent?.extras?.getInt(Constants.score, 0)
+        var score = sharedPref.getInt(Constants.currentscore.toString(), 0)
+
+
 
         var questions= Constants.getQuestionsOne()
 
@@ -35,18 +68,27 @@ class QuestionActivityOne : AppCompatActivity() {
 
         binding.optionOne.setOnClickListener {
             if(currentQuestion < 4){
-            val intent=Intent(this,QuestionActivityOne::class.java)
-            intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
-            intent.putExtra(Constants.score, score!!+1)
-            startActivity(intent)
-            finish()
+                val intent=Intent(this,QuestionActivityOne::class.java)
+                intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
+                val newscore=Constants.currentscore+1;
+                editor.apply{
+                    putInt(Constants.currentscore.toString(), newscore)
+                    apply()
+                }
+                startActivity(intent)
+                finish()
             }
             if(currentQuestion >= 4)
             {
                 val intent=Intent(this,MainActivity::class.java)
-                intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
-                intent.putExtra(Constants.score, score!!+1)
-                Toast.makeText(applicationContext, "Your Score is: "+ score, Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Your Score is: "+ Constants.currentscore, Toast.LENGTH_SHORT).show()
+                if(Constants.currentscore > Constants.HIGH_SCORE1){
+                    editor.apply{
+                        putInt(Constants.HIGH_SCORE1.toString(), Constants.currentscore)
+                        putString(Constants.HIGH_SCORE1_USER, Constants.USERNAME)
+                        apply()
+                    }
+                }
 
                 startActivity(intent)
 
@@ -57,26 +99,87 @@ class QuestionActivityOne : AppCompatActivity() {
 
         binding.optionTwo.setOnClickListener {
 
-            val intent=Intent(this,QuestionActivityOne::class.java)
-            intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
-            startActivity(intent)
-            finish()
+            if(currentQuestion < 4){
+                val intent=Intent(this,QuestionActivityOne::class.java)
+                intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
+
+                startActivity(intent)
+                finish()
+            }
+            if(currentQuestion >= 4)
+            {
+                val intent=Intent(this,MainActivity::class.java)
+                Toast.makeText(applicationContext, "Your Score is: "+ Constants.currentscore, Toast.LENGTH_SHORT).show()
+                if(Constants.currentscore > Constants.HIGH_SCORE1){
+                    editor.apply{
+                        putInt(Constants.HIGH_SCORE1.toString(), Constants.currentscore)
+                        putString(Constants.HIGH_SCORE1_USER, Constants.USERNAME)
+                        apply()
+                    }
+                }
+
+                startActivity(intent)
+
+                finish()
+            }
+
+
 
         }
         binding.optionThree.setOnClickListener {
 
-            val intent=Intent(this,QuestionActivityOne::class.java)
-            intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
-            startActivity(intent)
-            finish()
+            if(currentQuestion < 4){
+                val intent=Intent(this,QuestionActivityOne::class.java)
+                intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
+
+                startActivity(intent)
+                finish()
+            }
+            if(currentQuestion >= 4)
+            {
+                val intent=Intent(this,MainActivity::class.java)
+                Toast.makeText(applicationContext, "Your Score is: "+ Constants.currentscore, Toast.LENGTH_SHORT).show()
+                if(Constants.currentscore > Constants.HIGH_SCORE1){
+                    editor.apply{
+                        putInt(Constants.HIGH_SCORE1.toString(), Constants.currentscore)
+                        putString(Constants.HIGH_SCORE1_USER, Constants.USERNAME)
+                        apply()
+                    }
+                }
+
+                startActivity(intent)
+
+                finish()
+            }
+
 
         }
         binding.optionFour.setOnClickListener {
 
-            val intent=Intent(this,QuestionActivityOne::class.java)
-            intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
-            startActivity(intent)
-            finish()
+            if(currentQuestion < 4){
+                val intent=Intent(this,QuestionActivityOne::class.java)
+                intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
+
+                startActivity(intent)
+                finish()
+            }
+            if(currentQuestion >= 4)
+            {
+                val intent=Intent(this,MainActivity::class.java)
+                Toast.makeText(applicationContext, "Your Score is: "+ Constants.currentscore, Toast.LENGTH_SHORT).show()
+                if(Constants.currentscore > Constants.HIGH_SCORE1){
+                    editor.apply{
+                        putInt(Constants.HIGH_SCORE1.toString(), Constants.currentscore)
+                        putString(Constants.HIGH_SCORE1_USER, Constants.USERNAME)
+                        apply()
+                    }
+                }
+
+                startActivity(intent)
+
+                finish()
+            }
+
 
         }
     }

@@ -5,7 +5,23 @@ import java.util.ArrayList
 object Constants {
 
     public val currentquestion = "Current question"
-    public val score="0"
+    public val currentscore: Int=0;
+
+    val USERNAME: String?=null;
+
+    val HIGH_SCORE1: Int=0;
+    val HIGH_SCORE1_USER: String?=null;
+
+    val HIGH_SCORE2: Int=0;
+    val HIGH_SCORE2_USER: String?=null;
+
+    val HIGH_SCORE3: Int=0;
+    val HIGH_SCORE3_USER: String?=null;
+
+
+
+
+
 
     fun getQuestionsOne(): ArrayList<Question> {
 
