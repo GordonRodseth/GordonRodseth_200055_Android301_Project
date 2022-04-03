@@ -145,8 +145,8 @@
             android:layout_gravity="end"
             android:layout_toStartOf="@+id/navsettings"
             android:layout_toEndOf="@+id/navhome"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:src="@drawable/icon4" />
 
         <ImageView

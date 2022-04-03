@@ -65,22 +65,11 @@
             android:layout_marginTop="10dp"
             android:background="@color/black"
             android:fontFamily="@font/zendots"
+            android:textColor="@color/white"
             android:text="Change Username">
 
         </Button>
 
-        <Button
-            android:id="@+id/clear_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@color/black"
-
-            android:fontFamily="@font/zendots"
-            android:text="Clear Username">
-
-        </Button>
 
         <EditText
             android:id="@+id/et_newname"
@@ -133,12 +122,12 @@
 
         <ImageView
             android:id="@+id/navprof"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="fill_parent"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:src="@drawable/icon1" />
 
         <ImageView

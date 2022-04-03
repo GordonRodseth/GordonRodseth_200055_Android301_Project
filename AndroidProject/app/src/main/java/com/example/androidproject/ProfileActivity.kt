@@ -7,7 +7,8 @@ import com.example.androidproject.databinding.ActivityProfileBinding
 import android.content.Intent;
 import com.example.androidproject.Models.Constants
 
-class ProfileActivity : AppCompatActivity() {
+class
+ProfileActivity : AppCompatActivity() {
     private  lateinit var binding:ActivityProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,14 +37,9 @@ class ProfileActivity : AppCompatActivity() {
                 putString(Constants.USERNAME,newname)
                 apply()
             }
-        }
-
-        binding.clearButton.setOnClickListener {
-            val newname="";
-            editor.apply(){
-                putString(Constants.USERNAME,newname)
-                apply()
-            }
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         //navigation bar

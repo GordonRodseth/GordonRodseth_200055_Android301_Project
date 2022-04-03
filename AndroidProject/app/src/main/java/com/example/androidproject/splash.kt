@@ -1,5 +1,6 @@
 package com.example.androidproject
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,10 +18,13 @@ class splash : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
+        val sharedPref=getSharedPreferences("myPref", Context.MODE_PRIVATE)
+        val editor=sharedPref.edit()
 
+        var user=sharedPref.getString(Constants.USERNAME,"NO_NAME");
         Handler().postDelayed({
-            if(Constants.USERNAME==""){
-                val intent = Intent(this, ProfileActivity::class.java)
+            if(user=="NO_NAME"){
+                val intent = Intent(this, EnterNameActivity::class.java)
                 startActivity(intent)
             }
             else{

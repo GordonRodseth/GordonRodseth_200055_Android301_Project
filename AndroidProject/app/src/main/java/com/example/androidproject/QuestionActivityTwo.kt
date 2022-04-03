@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.widget.Toast
 import com.example.androidproject.Models.Constants
 import com.example.androidproject.databinding.ActivityQuestionTwoBinding
+import android.os.Vibrator
 
 class QuestionActivityTwo : AppCompatActivity() {
     private  lateinit var binding:ActivityQuestionTwoBinding
@@ -49,14 +50,15 @@ class QuestionActivityTwo : AppCompatActivity() {
         val sharedPref=getSharedPreferences("myPref", Context.MODE_PRIVATE)
         val editor=sharedPref.edit()
 
-        var currentQuestion = intent?.extras?.getInt(Constants.currentquestion, 1)
-        var score = sharedPref.getInt(Constants.currentscore.toString(), 0)
+        var currentQuestion = intent?.extras?.getInt(Constants.currentquestion, 0)
+        var currentScore = intent?.extras?.getInt(Constants.currentscore, 0)
 
-        var highscore=sharedPref.getInt(Constants.HIGH_SCORE1.toString(), 0)
+        val highscore=sharedPref.getInt(Constants.HIGH_SCORE.toString(),0);
+        val user=sharedPref.getString(Constants.USERNAME,"");
 
         var questions= Constants.getQuestionsTwo()
 
-        var question=questions[currentQuestion!!-1]
+        var question=questions[currentQuestion!!]
 
         binding.question.text = question.question
         binding.optionOneText.text = question.optionOne
@@ -67,27 +69,33 @@ class QuestionActivityTwo : AppCompatActivity() {
         title="Question: "
 
         binding.optionOne.setOnClickListener {
-            if(currentQuestion < 4){
+            val vibrator=getSystemService(Context.VIBRATOR_SERVICE) as Vibrator;
+            if(vibrator.hasVibrator()) {
+                vibrator.vibrate(100)
+            }
+            if(currentQuestion < 5){
                 val intent=Intent(this,QuestionActivityTwo::class.java)
                 intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
-                val newscore=Constants.currentscore+1;
-                editor.apply{
-                    putInt(Constants.currentscore.toString(), newscore)
-                    apply()
-                }
+                intent.putExtra(Constants.currentscore, currentScore!!+1)
                 startActivity(intent)
                 finish()
             }
-            if(currentQuestion >= 4)
+            if(currentQuestion >= 5)
             {
+                var uscore =currentScore!!+1;
+                intent.putExtra(Constants.currentscore, currentScore!!+1)
                 val intent=Intent(this,MainActivity::class.java)
-                Toast.makeText(applicationContext, "Your Score is: "+ Constants.currentscore, Toast.LENGTH_SHORT).show()
-                if(Constants.currentscore > Constants.HIGH_SCORE2){
+                Toast.makeText(applicationContext, "Your Score is: "+ uscore, Toast.LENGTH_SHORT).show()
+
+                if((currentScore!!+1)> highscore!!){
+                    Toast.makeText(applicationContext, "NEW HIGH SCORE", Toast.LENGTH_SHORT).show()
                     editor.apply{
-                        putInt(Constants.HIGH_SCORE2.toString(), Constants.currentscore)
-                        putString(Constants.HIGH_SCORE2_USER, Constants.USERNAME)
+                        putInt(Constants.HIGH_SCORE.toString(), uscore)
+                        putString(Constants.HIGH_SCORE_USER, user.toString())
+                        putString(Constants.TOP_CATEGORY, "Strange Sightings")
                         apply()
                     }
+
                 }
 
                 startActivity(intent)
@@ -98,23 +106,32 @@ class QuestionActivityTwo : AppCompatActivity() {
 
 
         binding.optionTwo.setOnClickListener {
-
-            if(currentQuestion < 4){
+            var uscore= currentScore!!.toInt();
+            val vibrator=getSystemService(Context.VIBRATOR_SERVICE) as Vibrator;
+            if(vibrator.hasVibrator()) {
+                vibrator.vibrate(100)
+            }
+            if(currentQuestion < 5){
                 val intent=Intent(this,QuestionActivityTwo::class.java)
                 intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
 
                 startActivity(intent)
                 finish()
             }
-            if(currentQuestion >= 4)
+            if(currentQuestion >= 5)
             {
+
                 val intent=Intent(this,MainActivity::class.java)
-                Toast.makeText(applicationContext, "Your Score is: "+ Constants.currentscore, Toast.LENGTH_SHORT).show()
-                if(Constants.currentscore > Constants.HIGH_SCORE2){
-                    editor.apply{
-                        putInt(Constants.HIGH_SCORE2.toString(), Constants.currentscore)
-                        putString(Constants.HIGH_SCORE2_USER, Constants.USERNAME)
-                        apply()
+                Toast.makeText(applicationContext, "Your Score is: "+ uscore, Toast.LENGTH_SHORT).show()
+                if (currentScore != null) {
+                    if(currentScore> Constants.HIGH_SCORE!!){
+                        Toast.makeText(applicationContext, "NEW HIGH SCORE", Toast.LENGTH_SHORT).show()
+                        editor.apply{
+                            putInt(Constants.HIGH_SCORE.toString(), currentScore)
+                            putString(Constants.HIGH_SCORE_USER, user.toString())
+                            putString(Constants.TOP_CATEGORY, "Strange Sightings")
+                            apply()
+                        }
                     }
                 }
 
@@ -127,23 +144,33 @@ class QuestionActivityTwo : AppCompatActivity() {
 
         }
         binding.optionThree.setOnClickListener {
-
-            if(currentQuestion < 4){
-                val intent=Intent(this,QuestionActivityTwo::class.java)
-                intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
+            var uscore = currentScore!!.toInt();
+            val vibrator=getSystemService(Context.VIBRATOR_SERVICE) as Vibrator;
+            if(vibrator.hasVibrator()) {
+                vibrator.vibrate(100)
+            }
+            if (currentQuestion < 5) {
+                val intent = Intent(this, QuestionActivityTwo::class.java)
+                intent.putExtra(Constants.currentquestion, currentQuestion!! + 1)
 
                 startActivity(intent)
                 finish()
             }
-            if(currentQuestion >= 4)
-            {
-                val intent=Intent(this,MainActivity::class.java)
-                Toast.makeText(applicationContext, "Your Score is: "+ Constants.currentscore, Toast.LENGTH_SHORT).show()
-                if(Constants.currentscore > Constants.HIGH_SCORE2){
-                    editor.apply{
-                        putInt(Constants.HIGH_SCORE2.toString(), Constants.currentscore)
-                        putString(Constants.HIGH_SCORE2_USER, Constants.USERNAME)
-                        apply()
+            if (currentQuestion >= 5) {
+
+                val intent = Intent(this, MainActivity::class.java)
+                Toast.makeText(applicationContext, "Your Score is: " + uscore, Toast.LENGTH_SHORT)
+                    .show()
+                if (currentScore != null) {
+                    if (currentScore > Constants.HIGH_SCORE!!) {
+                        Toast.makeText(applicationContext, "NEW HIGH SCORE", Toast.LENGTH_SHORT)
+                            .show()
+                        editor.apply {
+                            putInt(Constants.HIGH_SCORE.toString(), currentScore)
+                            putString(Constants.HIGH_SCORE_USER, user.toString())
+                            putString(Constants.TOP_CATEGORY, "Strange Sightings")
+                            apply()
+                        }
                     }
                 }
 
@@ -151,27 +178,34 @@ class QuestionActivityTwo : AppCompatActivity() {
 
                 finish()
             }
-
-
         }
         binding.optionFour.setOnClickListener {
-
-            if(currentQuestion < 4){
+            var uscore= currentScore!!.toInt();
+            val vibrator=getSystemService(Context.VIBRATOR_SERVICE) as Vibrator;
+            if(vibrator.hasVibrator()) {
+                vibrator.vibrate(100)
+            }
+            if(currentQuestion < 5){
                 val intent=Intent(this,QuestionActivityTwo::class.java)
                 intent.putExtra(Constants.currentquestion, currentQuestion!!+1)
 
                 startActivity(intent)
                 finish()
             }
-            if(currentQuestion >= 4)
+            if(currentQuestion >= 5)
             {
+
                 val intent=Intent(this,MainActivity::class.java)
-                Toast.makeText(applicationContext, "Your Score is: "+ Constants.currentscore, Toast.LENGTH_SHORT).show()
-                if(Constants.currentscore > Constants.HIGH_SCORE2){
-                    editor.apply{
-                        putInt(Constants.HIGH_SCORE2.toString(), Constants.currentscore)
-                        putString(Constants.HIGH_SCORE2_USER, Constants.USERNAME)
-                        apply()
+                Toast.makeText(applicationContext, "Your Score is: "+ uscore, Toast.LENGTH_SHORT).show()
+                if (currentScore != null) {
+                    if(currentScore> Constants.HIGH_SCORE!!){
+                        Toast.makeText(applicationContext, "NEW HIGH SCORE", Toast.LENGTH_SHORT).show()
+                        editor.apply{
+                            putInt(Constants.HIGH_SCORE.toString(), currentScore)
+                            putString(Constants.HIGH_SCORE_USER, user.toString())
+                            putString(Constants.TOP_CATEGORY, "Strange Sightings")
+                            apply()
+                        }
                     }
                 }
 

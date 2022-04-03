@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidproject.databinding.ActivitySettingsBinding
 import android.content.Intent;
+import android.widget.Toast
 import com.example.androidproject.Models.Constants
 
 class SettingsActivity : AppCompatActivity() {
@@ -28,19 +29,16 @@ class SettingsActivity : AppCompatActivity() {
         val view=binding.root
         setContentView(view)
 
-        binding.username.text=user;
 
         binding.clearButton.setOnClickListener {
-
+            Toast.makeText(applicationContext, "Scores cleared", Toast.LENGTH_SHORT).show()
             editor.apply(){
                 putInt(Constants.currentscore.toString(),0)
-                putInt(Constants.HIGH_SCORE1.toString(),0)
-                putInt(Constants.HIGH_SCORE2.toString(),0)
-                putInt(Constants.HIGH_SCORE3.toString(),0)
+                putInt(Constants.HIGH_SCORE.toString(),0)
 
-                putString(Constants.HIGH_SCORE1_USER, null)
-                putString(Constants.HIGH_SCORE2_USER, null)
-                putString(Constants.HIGH_SCORE3_USER, null)
+                putString(Constants.HIGH_SCORE_USER, null)
+
+                putString(Constants.TOP_CATEGORY, null)
 
                 apply()
             }

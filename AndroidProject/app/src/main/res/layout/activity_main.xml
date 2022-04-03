@@ -104,12 +104,12 @@
 
         <ImageView
             android:id="@+id/navhome"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="fill_parent"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
             android:src="@drawable/icon3" />
 
         <ImageView

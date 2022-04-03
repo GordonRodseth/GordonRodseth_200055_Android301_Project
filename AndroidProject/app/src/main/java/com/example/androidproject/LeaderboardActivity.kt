@@ -13,26 +13,13 @@ class LeaderboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val sharedPref=getSharedPreferences("myPref", Context.MODE_PRIVATE)
-        val editor=sharedPref.edit()
-        editor.apply{
-            putInt(Constants.currentscore.toString(),0)
-            intent.putExtra(Constants.currentquestion, 0)
-            apply()
-        }
 
-        var highscore1=sharedPref.getInt(Constants.HIGH_SCORE1.toString(), 0)
-        var highscore2=sharedPref.getInt(Constants.HIGH_SCORE2.toString(), 0)
-        var highscore3=sharedPref.getInt(Constants.HIGH_SCORE3.toString(), 0)
-
-        var user1=sharedPref.getString(Constants.HIGH_SCORE1_USER, "N/A")
-        var user2=sharedPref.getString(Constants.HIGH_SCORE2_USER, "N/A")
-        var user3=sharedPref.getString(Constants.HIGH_SCORE3_USER, "N/A")
 
         binding= ActivityLeaderboardBinding.inflate(layoutInflater)
         val view=binding.root
         setContentView(view)
 
+        val sharedPref=getSharedPreferences("myPref", Context.MODE_PRIVATE)
         //navigation bar
         binding.navhome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -61,12 +48,15 @@ class LeaderboardActivity : AppCompatActivity() {
         }
         //navigation bar
 
-        binding.score1.text= highscore1.toString();
-        binding.score2.text=highscore2.toString();
-        binding.score3.text=highscore3.toString();
+        val highscore=sharedPref.getInt(Constants.HIGH_SCORE.toString(),0);
+        val user=sharedPref.getString(Constants.HIGH_SCORE_USER,"");
+        val category=sharedPref.getString(Constants.TOP_CATEGORY,"");
 
-        binding.user1.text=user1;
-        binding.user2.text=user2;
-        binding.user3.text=user3;
+
+        binding.score.text=highscore.toString() ;
+        binding.user.text=user;
+        binding.category.text=category;
+
+
     }
 }

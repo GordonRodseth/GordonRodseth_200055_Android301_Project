@@ -51,18 +51,18 @@
         android:id="@+id/Scorebox1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TitleBox"
+        android:layout_centerInParent="true"
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/scorebox1title"
+            android:id="@+id/category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:fontFamily="@font/zendots"
             android:padding="15dp"
             android:singleLine="false"
-            android:text="Ancient Aliens:"
+            android:text="Category:"
             android:textAlignment="viewStart"
             android:textColor="@color/white"
             android:textSize="8pt"></TextView>
@@ -70,7 +70,7 @@
         <RelativeLayout
             android:layout_width="327dp"
             android:layout_height="75dp"
-            android:layout_below="@+id/scorebox1title"
+            android:layout_below="@+id/category"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="5dp"
             android:background="@color/black"
@@ -79,7 +79,7 @@
             android:layout_alignParentRight="true">
 
             <TextView
-                android:id="@+id/score1"
+                android:id="@+id/score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -92,69 +92,7 @@
                 android:textSize="7pt"></TextView>
 
             <TextView
-                android:id="@+id/user1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="0dp"
-                android:fontFamily="@font/zendots"
-                android:padding="15dp"
-                android:singleLine="false"
-                android:text="User1"
-                android:textAlignment="viewEnd"
-                android:textColor="@color/white"
-                android:textSize="6pt"></TextView>
-        </RelativeLayout>
-
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/Scorebox2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Scorebox1"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:id="@+id/scorebox2title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:fontFamily="@font/zendots"
-            android:padding="15dp"
-            android:paddingBottom="0dp"
-            android:singleLine="false"
-            android:text="Strange Sightings:"
-            android:textAlignment="viewStart"
-            android:textColor="@color/white"
-            android:textSize="8pt"></TextView>
-
-        <RelativeLayout
-            android:layout_width="327dp"
-            android:layout_height="75dp"
-            android:layout_below="@+id/scorebox2title"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/black"
-            android:outlineSpotShadowColor="@color/white"
-            android:elevation="3dp"
-            android:layout_alignParentRight="true">
-
-            <TextView
-                android:id="@+id/score2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:fontFamily="@font/zendots"
-                android:padding="15dp"
-                android:singleLine="false"
-                android:text="Score1"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
-                android:textSize="7pt"></TextView>
-
-            <TextView
-                android:id="@+id/user2"
+                android:id="@+id/user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -171,67 +109,6 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/Scorebox3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Scorebox2"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:id="@+id/scorebox3title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:fontFamily="@font/zendots"
-            android:padding="15dp"
-            android:singleLine="false"
-            android:text="Amazing Abductions:"
-            android:textAlignment="viewStart"
-            android:textColor="@color/white"
-            android:textSize="8pt"></TextView>
-
-        <RelativeLayout
-            android:layout_width="327dp"
-            android:layout_height="75dp"
-            android:layout_below="@+id/scorebox3title"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/black"
-            android:outlineSpotShadowColor="@color/white"
-            android:elevation="3dp"
-            android:layout_alignParentRight="true">
-
-            <TextView
-                android:id="@+id/score3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:fontFamily="@font/zendots"
-                android:padding="15dp"
-                android:singleLine="false"
-                android:text="Score1"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
-                android:textSize="7pt"></TextView>
-
-            <TextView
-                android:id="@+id/user3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="0dp"
-                android:fontFamily="@font/zendots"
-                android:padding="15dp"
-                android:singleLine="false"
-                android:text="User1"
-                android:textAlignment="viewEnd"
-                android:textColor="@color/white"
-                android:textSize="6pt"></TextView>
-        </RelativeLayout>
-
-
-    </RelativeLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -268,8 +145,8 @@
             android:layout_height="fill_parent"
             android:layout_toStartOf="@+id/navhome"
             android:layout_toEndOf="@+id/navprof"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:src="@drawable/icon2"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="130dp"
